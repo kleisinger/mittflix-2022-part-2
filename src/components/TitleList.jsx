@@ -19,7 +19,7 @@ const TitleList = ({ name, titles, toggle, watchList }) => {
                 onWatchList={onWatchList}
               />
             );
-          })}
+          })} 
         </div>
       </div>
     </div>
