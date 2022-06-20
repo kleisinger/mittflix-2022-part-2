@@ -15,6 +15,8 @@ const DetailsPage = ({ watchList, toggle }) => {
     getShowDetails(id).then((details) => setShowDetails(details));
   }, [id]);
 
+
+  // no function for add watchlist button on details
   return (
     <>
       {showDetails ? (
