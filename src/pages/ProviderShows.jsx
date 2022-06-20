@@ -29,9 +29,37 @@ const ProviderShows = ({ watchList, toggle}) => {
             />
           ) : (
             <h2>No matching results</h2>
-          )}</>
+          )}
+        </>
         
     );
 }
  
 export default ProviderShows;
+
+// {shows ? (
+//     shows.map((showProvider) => {
+//       return (
+//         <TitleList
+//           key={showProvider[0]}
+//           name={showProvider[0]}
+//           titles={showProvider[1]}
+//           toggle={toggle}
+//           watchList={watchList}
+//         />
+//       );
+//     })
+//   ) : (
+//     <p>Loading... </p>
+//   )}
+
+// {titles ? (
+//     <TitleList
+//       name={`shows matching your search: "${query}"`}
+//       titles={titles}
+//       watchList={watchList}
+//       toggle={toggle}
+//     />
+//   ) : (
+//     <h2>No matching results</h2>
+//   )}

@@ -1,9 +1,6 @@
 import Provider from "./Provider";
 
 const ProviderList = ({providers, watchList, toggle}) => {
-
-    console.log(providers)
-
    
     return (  
     <div className="titleList"> 
@@ -12,7 +9,7 @@ const ProviderList = ({providers, watchList, toggle}) => {
             <div className="titles-wrapper">
                 {providers === null ? <p>No Results Found</p> :
                 providers.map((provider) =>
-                    <Provider key={provider.id} provider={provider} />)
+                    <Provider key={provider.provider_id} provider={provider} />)
                 }
             </div>
         </div>

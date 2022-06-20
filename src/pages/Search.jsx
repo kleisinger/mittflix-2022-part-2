@@ -6,12 +6,18 @@ import TitleList from '../components/TitleList';
 const SearchPage = ({ watchList, toggle }) => {
   const [titles, setTitles] = useState(null);
   const location = useLocation();
+
   const params = new URLSearchParams(location.search);
   const query = params.get('query');
+  
+  const pageParam = new URLSearchParams(location.page);
+  const page = params.get("page");
+
+
 
   useEffect(() => {
     if (query) {
-      searchShows(query).then((titles) => setTitles(titles));
+      searchShows(query, page).then((titles) => setTitles(titles));
     }
   }, [query]);
 
@@ -27,6 +33,7 @@ const SearchPage = ({ watchList, toggle }) => {
       ) : (
         <h2>No matching results</h2>
       )}
+      {/* <Pagination/> */}
     </>
   );
 };
