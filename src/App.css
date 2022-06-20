@@ -227,6 +227,7 @@ a {
   -webkit-transition: background 0.125s ease;
   transition: background 0.125s ease;
   border-radius: 3px;
+  list-style: none;
 }
 
 .navigation a {
