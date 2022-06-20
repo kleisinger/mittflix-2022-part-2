@@ -5,6 +5,7 @@ import TitleList from '../components/TitleList';
 function MainPage({ toggle, watchList }) {
   const [shows, setShows] = useState(null);
 
+  // all initial shows, array of 4 objects from the provider
   useEffect(() => {
     getShowsByAllProviders(providers).then((result) => setShows(result));
   }, []);
