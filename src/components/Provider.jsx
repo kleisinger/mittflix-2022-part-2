@@ -4,6 +4,7 @@ import { createSearchParams, Link, useNavigate } from "react-router-dom";
 import styles from "./Provider.module.css";
 
 const Proivder = ({provider}) => {
+
     const { provider_id, provider_name, logo_path } = provider;
     const navigate = useNavigate();
 
