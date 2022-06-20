@@ -3,6 +3,7 @@ const BASE_URL = `https://api.themoviedb.org/3`;
 const discoverEndpoint = '/discover/tv';
 const searchEndpoint = '/search/tv';
 const detailsEndpoint = '/tv';
+const providersEndpoint = '/watch/providers/tv'
 
 const getShowsByProviderId = async (id) => {
   const request = await fetch(
@@ -47,3 +48,20 @@ export const getShowDetails = async (id) => {
   const details = response;
   return details;
 };
+
+export const getProviders = async () => {
+  const URL = 
+    BASE_URL + providersEndpoint + `?api_key=${API_KEY}&watch_region=CA`
+  const request = await fetch(URL);
+  const response = await request.json();
+  const providers = response.results;
+  return providers;
+}
+
+
+
+// https://api.themoviedb.org/3/watch/providers/tv?api_key=dad9397a96b0c9208bbcab1864763f7b&watch_region=CA
+
+// https://api.themoviedb.org/3/watch/providers?id=8/tv?api_key=dad9397a96b0c9208bbcab1864763f7b&language=en-US&watch_region=CA
+
+// https://api.themoviedb.org/3/tv/60574/watch/providers?api_key=dad9397a96b0c9208bbcab1864763f7b

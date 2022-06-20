@@ -14,6 +14,9 @@ const Header = (props) => {
             <li>
               <a href="/my-watch-list">Watch List</a>
             </li>
+            <li>
+              <a href="/providers">Providers</a>
+            </li>
           </ul>
         </nav>
       </div>
