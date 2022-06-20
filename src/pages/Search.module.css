@@ -1,0 +1,33 @@
+.pagination {
+    border: 2px solid var(--red);
+    background-color: var(--red);
+    color: white;
+    font-weight: 400;
+    padding: 10px 15px;
+    font-size: 20px;
+    transition: background 0.125s ease;
+    border-radius: 4px;
+    margin: 0.5rem;
+  }
+  
+  .pagination:hover {
+    background: none;
+    cursor: pointer;
+  }
+  
+  .prev {
+    border: 2px solid white;
+    background-color: white;
+    color: var(--red);
+    font-weight: 400;
+    padding: 10px 15px;
+    font-size: 20px;
+    transition: background 0.125s ease;
+    border-radius: 4px;
+  }
+  
+  .prev:hover {
+    background: none;
+    color: white;
+    cursor: pointer;
+  }

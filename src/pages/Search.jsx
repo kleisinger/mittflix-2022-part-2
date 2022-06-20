@@ -1,25 +1,40 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchShows } from '../services/tmdb-api';
 import TitleList from '../components/TitleList';
+import styles from "./Search.module.css";
 
 const SearchPage = ({ watchList, toggle }) => {
   const [titles, setTitles] = useState(null);
+  
   const location = useLocation();
+  let navigate = useNavigate();
 
   const params = new URLSearchParams(location.search);
   const query = params.get('query');
-  
-  const pageParam = new URLSearchParams(location.page);
   const page = params.get("page");
 
-
+  const [currentPage, setCurrentPage] = useState(page);
+  let showsOnPage = titles != null ? titles.length : ""; 
+ 
 
   useEffect(() => {
     if (query) {
-      searchShows(query, page).then((titles) => setTitles(titles));
+      searchShows(query, currentPage)
+        .then((titles) => setTitles(titles))
+        .then(navigate({ pathname: "/search", search: `query=${query}&page=${currentPage}`}))
     }
-  }, [query]);
+  }, [query, currentPage]);
+
+
+  const handleNext = () => {
+    setCurrentPage((prevState) => parseInt(prevState) + 1)
+  }
+
+  const handlePrev = () => {
+    setCurrentPage((prevState) => parseInt(prevState) - 1)
+  }
+
 
   return (
     <>
@@ -33,9 +48,12 @@ const SearchPage = ({ watchList, toggle }) => {
       ) : (
         <h2>No matching results</h2>
       )}
-      {/* <Pagination/> */}
+      {currentPage != 1 ? <button onClick={handlePrev} className={styles.pagination}>Previous</button> : ""}
+      {showsOnPage === 20 ? <button onClick={handleNext} className={styles.pagination}>Next</button> 
+      : <h2>End of Results</h2> }
     </>
   );
 };
 
 export default SearchPage;
+

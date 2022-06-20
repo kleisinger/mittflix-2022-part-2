@@ -9,13 +9,13 @@ const ProviderShows = ({ watchList, toggle}) => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const query = params.get('id');
-    console.log(query)
+    //console.log(query)
 
     useEffect(() => {
         getShowsByProviderId(query).then((titles) => setTitles(titles));
       }, []);
 
-      console.log(titles)
+      //console.log(titles)
 
     return ( 
         // <h1>this works</h1>

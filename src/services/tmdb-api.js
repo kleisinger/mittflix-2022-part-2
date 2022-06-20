@@ -57,13 +57,3 @@ export const getProviders = async () => {
   const providers = response.results;
   return providers;
 }
-
-
-
-
-
-// https://api.themoviedb.org/3/watch/providers/tv?api_key=dad9397a96b0c9208bbcab1864763f7b&watch_region=CA
-
-// https://api.themoviedb.org/3/watch/providers?id=8/tv?api_key=dad9397a96b0c9208bbcab1864763f7b&language=en-US&watch_region=CA
-
-// https://api.themoviedb.org/3/tv/60574/watch/providers?api_key=dad9397a96b0c9208bbcab1864763f7b
