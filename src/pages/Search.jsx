@@ -16,7 +16,6 @@ const SearchPage = ({ watchList, toggle }) => {
 
   const [currentPage, setCurrentPage] = useState(page);
   let showsOnPage = titles != null ? titles.length : ""; 
- 
 
   useEffect(() => {
     if (query) {
@@ -34,7 +33,6 @@ const SearchPage = ({ watchList, toggle }) => {
   const handlePrev = () => {
     setCurrentPage((prevState) => parseInt(prevState) - 1)
   }
-
 
   return (
     <>

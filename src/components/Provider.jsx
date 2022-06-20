@@ -19,7 +19,6 @@ const Proivder = ({provider}) => {
                 <div className={styles.title}>{provider_name}</div>
             </div>
         </div>
-
     );
 }
  

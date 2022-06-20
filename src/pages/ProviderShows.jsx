@@ -10,20 +10,14 @@ const ProviderShows = ({ watchList, toggle}) => {
     const params = new URLSearchParams(location.search);
     const query = params.get('id');
 
-    console.log(titles)
-
     let render;
-  if (titles === undefined ||  titles === null) {
-    render = false;
-  } else if (titles.length === 0){
-    render = false;
-  } else {
-    render = true;
-  }
-
-  console.log(titles)
-
-
+    if (titles === undefined ||  titles === null) {
+      render = false;
+    } else if (titles.length === 0){
+      render = false;
+    } else {
+      render = true;
+    }
 
     useEffect(() => {
         getShowsByProviderId(query).then((titles) => setTitles(titles))
@@ -31,19 +25,18 @@ const ProviderShows = ({ watchList, toggle}) => {
 
 
     return ( 
-        <>
-         {render === true ? (
-            <TitleList
-              name={`shows matching your search: "${query}"`}
-              titles={titles}
-              watchList={watchList}
-              toggle={toggle}
-            />
-          ) : (
-            <h2>No matching results</h2>
-          )}
-        </>
-        
+      <>
+        {render === true ? (
+           <TitleList
+             name={`shows matching your search: "${query}"`}
+             titles={titles}
+             watchList={watchList}
+             toggle={toggle}
+           />
+         ) : (
+           <h2>No matching results</h2>
+         )}
+      </>
     );
 }
  
